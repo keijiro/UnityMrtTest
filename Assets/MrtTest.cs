@@ -25,8 +25,8 @@ public class MrtTest : MonoBehaviour
 
     void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
-        var rt1 = RenderTexture.GetTemporary(source.width, source.height);
-        var rt2 = RenderTexture.GetTemporary(source.width, source.height);
+        var rt1 = RenderTexture.GetTemporary(source.width, source.height, 0, RenderTextureFormat.Default);
+        var rt2 = RenderTexture.GetTemporary(source.width, source.height, 0, RenderTextureFormat.DefaultHDR);
 
         _mrt[0] = rt1.colorBuffer;
         _mrt[1] = rt2.colorBuffer;
